@@ -1,0 +1,21 @@
+{% extends "shared/index.html" %}
+
+{% block title %}
+    <title>{{title}}</title>
+{% endblock %}
+{% block content %}
+
+    <div class="container">
+        <h3> API de Cartas de Personajes de Marvel</h3>
+        <div class="row">
+            {% for objeto in data %}
+                <div class="col-lg-4 col-md-3 col-sm-10 mr-0">
+                {% with obj=objeto %}
+                    {% include "components/card.html" %}
+                {% endwith %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
